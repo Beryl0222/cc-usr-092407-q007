@@ -1,0 +1,8 @@
+[project]
+name = "exhibition-product-sunset"
+version = "0.1.0"
+description = "临展文创退场处置领域资料"
+requires-python = ">=3.11"
+
+[tool.unittest]
+start-directory = "tests"
