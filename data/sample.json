@@ -4,6 +4,15 @@
   "occurred_at": "2026-09-20T09:00:00+08:00",
   "subject_id": "demo-009",
   "payload": {
-    "note": "虚构资料，仅用于格式核对"
+    "note": "虚构资料，仅用于格式核对",
+    "product_version": "demo-keychain-v1",
+    "channels": ["flagship_ec", "consignment", "warehouse"],
+    "ownership": {
+      "flagship_ec": "owned",
+      "consignment": "consigned",
+      "warehouse": "owned"
+    },
+    "contract_version": "CV-DEMO-001",
+    "positions": {"flagship_ec": 0, "consignment": 0, "warehouse": 0}
   }
 }

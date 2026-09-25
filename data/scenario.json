@@ -1,0 +1,358 @@
+[
+  {
+    "event_id": "evt-001",
+    "kind": "EXHIBITION_CLOSING",
+    "occurred_at": "2026-09-20T09:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {
+      "note": "闭展决定：固定商品版本/渠道/所有权/合同版本（虚构资料）",
+      "product_version": "ruishou-bookmark-v3",
+      "contract_version": "CV-2026-09-01",
+      "channels": ["flagship_ec", "consignment", "warehouse"],
+      "ownership": {
+        "flagship_ec": "owned",
+        "consignment": "consigned",
+        "warehouse": "owned"
+      },
+      "positions": {"flagship_ec": 40, "consignment": 60, "warehouse": 100}
+    }
+  },
+  {
+    "event_id": "evt-002",
+    "kind": "CONTRACT_LOCKED",
+    "occurred_at": "2026-09-20T09:05:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {
+      "contract_version": "CV-2026-09-01",
+      "consignment_rate": 1200,
+      "destruction_fee_rule": 30,
+      "note": "寄售分成12.00元/件，销毁/捐赠费用0.30元/件（单位：分）"
+    }
+  },
+  {
+    "event_id": "evt-003",
+    "kind": "CHANNEL_REPORTED",
+    "occurred_at": "2026-09-20T10:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {
+      "channel": "consignment",
+      "note": "寄售门店账面已下架后仍有新订单（晚到事实）",
+      "facts": [
+        {"kind": "IN_TRANSIT_ORDER", "quantity": 6, "order_ref": "SO-7788", "status": "paid"}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-004",
+    "kind": "CHANNEL_REPORTED",
+    "occurred_at": "2026-09-21T08:30:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {
+      "channel": "consignment",
+      "note": "门店系统重发同一回报（内容一致，必须识别为同一事实）",
+      "facts": [
+        {"kind": "IN_TRANSIT_ORDER", "quantity": 6, "order_ref": "SO-7788", "status": "paid"}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-005",
+    "kind": "ORDER_PROTECTED",
+    "occurred_at": "2026-09-20T10:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"channel": "flagship_ec", "quantity": 10, "order_ref": "EC-BATCH-0920"}
+  },
+  {
+    "event_id": "evt-006",
+    "kind": "AFTERSALES_RESERVED",
+    "occurred_at": "2026-09-20T10:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"channel": "warehouse", "quantity": 8, "reservation_id": "AS-001"}
+  },
+  {
+    "event_id": "evt-007",
+    "kind": "QUALITY_QUARANTINED",
+    "occurred_at": "2026-09-20T10:30:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"channel": "warehouse", "quantity": 4, "batch_id": "B202608"}
+  },
+  {
+    "event_id": "evt-008",
+    "kind": "RETAINED_SAMPLE",
+    "occurred_at": "2026-09-20T10:40:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"channel": "flagship_ec", "quantity": 2, "sample_id": "SP-02"}
+  },
+  {
+    "event_id": "evt-010",
+    "kind": "RETURN_TO_SUPPLIER_PLANNED",
+    "occurred_at": "2026-09-21T09:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-R1", "channel": "warehouse", "quantity": 60, "batch_id": "B202607"}
+  },
+  {
+    "event_id": "evt-011",
+    "kind": "PERMANENT_SALE_PLANNED",
+    "occurred_at": "2026-09-21T09:05:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-P1", "channel": "warehouse", "quantity": 10, "theoretical_qty": 10, "available_qty": 28}
+  },
+  {
+    "event_id": "evt-012",
+    "kind": "DESTRUCTION_PLANNED",
+    "occurred_at": "2026-09-21T09:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-X1", "channel": "warehouse", "quantity": 12, "theoretical_qty": 12, "available_qty": 18, "batch_id": "B202608", "note": "已剔除售后换货预留8件后的可销毁份额"}
+  },
+  {
+    "event_id": "evt-013",
+    "kind": "RETURN_TO_SUPPLIER_PLANNED",
+    "occurred_at": "2026-09-21T09:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-R1", "channel": "flagship_ec", "quantity": 18}
+  },
+  {
+    "event_id": "evt-014",
+    "kind": "DONATION_PLANNED",
+    "occurred_at": "2026-09-21T09:25:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-D1", "channel": "flagship_ec", "quantity": 8}
+  },
+  {
+    "event_id": "evt-015",
+    "kind": "PERMANENT_SALE_PLANNED",
+    "occurred_at": "2026-09-21T09:30:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-P1", "channel": "consignment", "quantity": 40, "theoretical_qty": 40, "available_qty": 60}
+  },
+  {
+    "event_id": "evt-016",
+    "kind": "DONATION_PLANNED",
+    "occurred_at": "2026-09-21T09:35:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-D1", "channel": "consignment", "quantity": 20}
+  },
+  {
+    "event_id": "evt-020",
+    "kind": "DISPOSAL_APPROVED",
+    "occurred_at": "2026-09-21T14:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "warehouse", "quantity": 60, "approver_id": "ma-li", "executor_id_hint": "chen-gong"}
+  },
+  {
+    "event_id": "evt-021",
+    "kind": "DISPOSAL_APPROVED",
+    "occurred_at": "2026-09-21T14:01:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-P1", "destination": "PERMANENT_SALE", "channel": "warehouse", "quantity": 10, "approver_id": "ma-li", "executor_id_hint": "chen-gong"}
+  },
+  {
+    "event_id": "evt-022",
+    "kind": "DISPOSAL_APPROVED",
+    "occurred_at": "2026-09-21T14:02:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-X1", "destination": "DESTRUCTION", "channel": "warehouse", "quantity": 12, "approver_id": "ma-li", "executor_id_hint": "chen-gong"}
+  },
+  {
+    "event_id": "evt-023",
+    "kind": "DISPOSAL_APPROVED",
+    "occurred_at": "2026-09-21T14:03:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "flagship_ec", "quantity": 18, "approver_id": "ma-li", "executor_id_hint": "wang-fang"}
+  },
+  {
+    "event_id": "evt-024",
+    "kind": "DISPOSAL_APPROVED",
+    "occurred_at": "2026-09-21T14:04:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-D1", "destination": "DONATION", "channel": "flagship_ec", "quantity": 8, "approver_id": "ma-li", "executor_id_hint": "wang-fang"}
+  },
+  {
+    "event_id": "evt-025",
+    "kind": "DISPOSAL_APPROVED",
+    "occurred_at": "2026-09-21T14:05:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-P1", "destination": "PERMANENT_SALE", "channel": "consignment", "quantity": 40, "approver_id": "ma-li", "executor_id_hint": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-026",
+    "kind": "DISPOSAL_APPROVED",
+    "occurred_at": "2026-09-21T14:06:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-D1", "destination": "DONATION", "channel": "consignment", "quantity": 20, "approver_id": "ma-li", "executor_id_hint": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-030",
+    "kind": "CHANNEL_REPORTED",
+    "occurred_at": "2026-09-22T08:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {
+      "channel": "consignment",
+      "note": "同标识SO-7788异内容（数量9 vs 6）：仅冻结寄售渠道该货品，其他渠道继续",
+      "facts": [
+        {"kind": "IN_TRANSIT_ORDER", "quantity": 9, "order_ref": "SO-7788", "status": "paid_amended"}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-040",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T09:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "warehouse", "step": "pick", "quantity": 60, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-041",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T09:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "warehouse", "step": "outbound", "quantity": 60, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-042",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T09:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "warehouse", "step": "confirm", "quantity": 60, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-043",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T10:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-P1", "destination": "PERMANENT_SALE", "channel": "warehouse", "step": "pick", "quantity": 10, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-044",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T10:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-P1", "destination": "PERMANENT_SALE", "channel": "warehouse", "step": "outbound", "quantity": 10, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-045",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T10:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-P1", "destination": "PERMANENT_SALE", "channel": "warehouse", "step": "confirm", "quantity": 10, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-046",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T11:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-X1", "destination": "DESTRUCTION", "channel": "warehouse", "step": "pick", "quantity": 12, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-047",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T11:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-X1", "destination": "DESTRUCTION", "channel": "warehouse", "step": "outbound", "quantity": 12, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-048",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T11:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "WH-X1", "destination": "DESTRUCTION", "channel": "warehouse", "step": "confirm", "quantity": 12, "executor_id": "chen-gong"}
+  },
+  {
+    "event_id": "evt-049",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T13:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "flagship_ec", "step": "pick", "quantity": 18, "executor_id": "wang-fang"}
+  },
+  {
+    "event_id": "evt-050",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T13:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "flagship_ec", "step": "outbound", "quantity": 18, "executor_id": "wang-fang"}
+  },
+  {
+    "event_id": "evt-051",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T13:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-R1", "destination": "RETURN_TO_SUPPLIER", "channel": "flagship_ec", "step": "confirm", "quantity": 18, "executor_id": "wang-fang"}
+  },
+  {
+    "event_id": "evt-052",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T14:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-D1", "destination": "DONATION", "channel": "flagship_ec", "step": "pick", "quantity": 8, "executor_id": "wang-fang"}
+  },
+  {
+    "event_id": "evt-053",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T14:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-D1", "destination": "DONATION", "channel": "flagship_ec", "step": "outbound", "quantity": 8, "executor_id": "wang-fang"}
+  },
+  {
+    "event_id": "evt-054",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T14:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "EC-D1", "destination": "DONATION", "channel": "flagship_ec", "step": "confirm", "quantity": 8, "executor_id": "wang-fang"}
+  },
+  {
+    "event_id": "evt-055",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T15:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-P1", "destination": "PERMANENT_SALE", "channel": "consignment", "step": "pick", "quantity": 40, "executor_id": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-056",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T15:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-P1", "destination": "PERMANENT_SALE", "channel": "consignment", "step": "outbound", "quantity": 40, "executor_id": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-057",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T15:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-P1", "destination": "PERMANENT_SALE", "channel": "consignment", "step": "confirm", "quantity": 40, "executor_id": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-058",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T16:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-D1", "destination": "DONATION", "channel": "consignment", "step": "pick", "quantity": 20, "executor_id": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-059",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T16:10:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-D1", "destination": "DONATION", "channel": "consignment", "step": "outbound", "quantity": 20, "executor_id": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-060",
+    "kind": "ITEM_DISPOSED",
+    "occurred_at": "2026-09-22T16:20:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-D1", "destination": "DONATION", "channel": "consignment", "step": "confirm", "quantity": 20, "executor_id": "zhao-wei"}
+  },
+  {
+    "event_id": "evt-070",
+    "kind": "SETTLEMENT_POSTED",
+    "occurred_at": "2026-09-23T09:00:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-P1", "contract_version": "CV-2026-09-01", "consignment_rate": 1200, "amount": 48000, "voucher_id": "V-2026-0923-01"}
+  },
+  {
+    "event_id": "evt-071",
+    "kind": "SETTLEMENT_POSTED",
+    "occurred_at": "2026-09-23T09:05:00+08:00",
+    "subject_id": "SKU-LX-001",
+    "payload": {"plan_id": "CS-D1", "contract_version": "CV-2026-09-01", "consignment_rate": 1200, "amount": 600, "voucher_id": "V-2026-0923-02"}
+  }
+]
