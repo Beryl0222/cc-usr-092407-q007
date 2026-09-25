@@ -1,0 +1,20 @@
+{
+  "event_id": "sample-009-002",
+  "kind": "DISPOSAL_PLAN_LOCKED",
+  "occurred_at": "2026-09-21T10:30:00+08:00",
+  "subject_id": "P-POSTCARD",
+  "payload": {
+    "plan_id": "EX-009:P-POSTCARD:v1",
+    "version": 1,
+    "contract_version": "CT-2026-Q3",
+    "shares": [
+      {"kind": "TRANSFER_TO_PERMANENT", "quantity": 60, "source": "FREE"},
+      {"kind": "DONATION", "quantity": 10, "source": "FREE"},
+      {"kind": "DESTRUCTION", "quantity": 4, "source": "FREE"}
+    ],
+    "protected": 25,
+    "samples_retained": 1,
+    "unresolved": 0,
+    "note": "虚构资料，仅用于格式核对"
+  }
+}
